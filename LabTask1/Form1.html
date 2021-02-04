@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8"/>
+    <title>Sign Up</title>
+</head>
+
+<body>
+  
+    <h2 style="color:red">Donor Information</h2>
+
+    <form>
+         	
+      <fieldset>
+      	<legend>Information</legend>
+
+      	   <label>First Name<span style="color:red">* </span> </label>
+      	   <input type="text" name="fname" required><br>
+
+           <label>Last Name<span style="color:red">* </span> </label>
+      	   <input type="text" name="lname" required><br>
+
+      	   <label>Company </label>
+      	   <input type="text" name="Company"><br>
+
+      	   <label>Address 1<span style="color:red">* </span> </label>
+      	   <input type="text" name="Address1" required><br>
+
+      	   <label>Address 2<span style="color:red">* </span> </label>
+      	   <input type="text" name="Address2" required><br>
+
+      	   <label>City<span style="color:red">* </span> </label>
+      	   <input type="text" name="city" required><br>
+
+           <label>State<span style="color:red">* </span> </label>
+      	        <select>
+                            <option> Dhaka </option>
+							<option> Rajshahi </option>
+							<option> Chittagong </option>
+							<option> Khulna </option>
+							<option> Sylhet </option>
+							<option> Zessore </option>
+							<option> Khulna </option>
+							<option> Mymenshing </option>
+							<option> Comilla </option>
+		        </select> <br>
+
+		    <label>Zip Code<span style="color:red">* </span> </label>
+      	    <input type="text" name="zcode" required><br>
+
+      	     <label>Country<span style="color:red">* </span> </label>
+      	        <select>
+                            <option> Bangladesh </option>
+							<option> India </option>
+							<option> Nepal </option>
+							<option> Nepal </option>
+							<option> Bhutan </option>
+							<option> Malaysia </option>
+							<option> Sri Lanka </option>
+							<option> China </option>
+							<option> Japan </option>
+		        </select> <br>
+
+		    <label>Phone </label>
+      	    <input type="text" name="Phone"><br>
+
+      	    <label>Fax </label>
+      	    <input type="text" name="Fax"><br>
+
+      	    <label>Email<span style="color:red">* </span> </label>
+      	    <input type="Email" name="Email" required><br>
+
+      	    <label>Donation Amount<span style="color:red">* </span> </label>
+      	    <input type="radio" name="Amount" value="None" checked="None"/>None
+            <input type="radio" name="Amount" value="$50"/> $50
+            <input type="radio" name="Amount" value="$75"/> $75 
+            <input type="radio" name="Amount" value="$100"/> $100 
+            <input type="radio" name="Amount" value="$250"/> $250
+            <input type="radio" name="Amount" value="Other"/> Other <br>
+            <b>Other Amount $</b> <input type="number" name="oamount" min="5">  <br>
+
+            <h2 style="color: red">Honorarium and Memorial Donation Information</h2> <br>
+            <label>I would like to make this donation</label>
+            <input type="radio" name="donation1" value="To Honor"/> To Honor 
+            <input type="radio" name="donation1" value="In Memory Of"/> In Memory Of <br>
+
+            <label>Name </label> 
+            <input type="text" name="name1"> <br> 
+
+            <label>Acknowledge Donation to </label> 
+            <input type="text" name="AcknowledgeDonation"> <br>
+
+            <label>Address </label> 
+            <input type="text" name="Address3"> <br>   
+
+            <label>City </label> 
+            <input type="text" name="city"> <br> 
+
+            <label>State</label>
+      	        <select>
+                            <option> Bangladesh </option>
+							<option> India </option>
+							<option> Japan </option>
+							<option> China </option>
+							<option> Korea </option>
+							<option> Malaysia </option>
+							<option> Sri Lanka </option>
+							<option> Nepal </option>
+							<option> Bhutan </option>
+		        </select> <br>
+
+            <label>Zip </label> 
+            <input type="text" name="zip1"> <br>
+
+            <h2 style="color: red">Additional Information</h2>
+            <p>Please enter your name, company or organizationas you would like it to appear in our publications: </p><br>
+
+            <label>Name </label>
+            <input type="text" name="name4"><br>
+
+             <input type="checkbox" name="c1" value="would like"/> I would like my gift to remain anonymous. <br>
+              <input type="checkbox" name="c2" value="employer" /> My employer offers a matching gift program. I will mail the matching gift form.<br>
+              <input type="checkbox" name="c3" value="Thank you" /> Please save the cost of acknowledging this gift by not mailing a  thank you later.<br>
+
+              <label>Comments </label> 
+              <textarea  placeholder="Enter your comments here..." name="textarea" rows="10" cols="20" title="comment"> </textarea> <br>
+
+              <label>How may we contact you? </label>
+              <input type="checkbox" name="c11" value="E-maik"/> E-mail <br>
+               <input type="checkbox" name="c12" value="Postal mail" /> Postal mail	 <br>
+               <input type="checkbox" name="c13" value="Telephone" /> Telephone <br>
+               <input type="checkbox" name="c14" value="Fax" /> Fax <br>
+
+               <label>I would like to receive newsletters and information about special events by: </label> <br>
+               <input type="checkbox" name="c21" value="E-mail" /> E-mail <br>
+               <input type="checkbox" name="c22" value="Postal mail" /> Postal mail	 <br>
+
+               <input type="checkbox" name="c23" value="" />	I would like information about volunteering with the <br>
+ 
+		        <input type="reset" name="Reset"/>
+		        <input type="submit" name="Continue"/> <br> <br>
+
+		        &#128274; Donate online with confidence.l You are on a secure server. <br> <br>
+
+		        If you have any problems or questiuons please contact support.
+
+
+
+      </fieldset>
+
+    </form>  
+
+</body>
+</html>
