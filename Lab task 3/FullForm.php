@@ -1,18 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>  
 <html>
-
 <head>
-	<title>Lab Task 3 Full Form With JSON</title>
+<title> Json </title>
 </head>
-<body>
+<body>  
 
 
-    <?php  
+  <?php  
 
-    $name = $email =$uname = $password = $cpassword = $gender = $dateofbirth = "";
+    $name = $email =$uname = $password = $cpassword = $gender = $dateofbirth = $message = $error=  "";
     $nameErr = $emailErr = $unameErr = $passwordErr = $cpasswordErr = $genderErr = $dateofbirthErr = "";
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["submit"])) {
+   
+
   if (empty($_POST["name"])) {
     $nameErr = "Name is required";
   } else  { 
@@ -25,7 +26,7 @@
       else{ $name = test_input($_POST["name"]);}
   }
 
-  if (empty($_POST["email"])) {
+    if (empty($_POST["email"])) {
     $emailErr = "Email is required";
   } else {
     $email = test_input($_POST["email"]);
@@ -35,27 +36,54 @@
     }
   }
 
-  if ($_POST["uname"]) {
+    if ($_POST["uname"]) {
   	$uname = test_input($_POST["uname"]);
   }
 
-  if ($_POST["password"] != $_POST["cpassword"]) {
+     if ($_POST["password"] != $_POST["cpassword"]) {
   	echo "Password didn't match";
   }
   else{ $password = test_input($_POST["password"]); }
     
-    if (empty($_POST["gender"])) {
+     if (empty($_POST["gender"])) {
     $genderErr = "Gender is required";
   } else {
     $gender = test_input($_POST["gender"]);
   }
 
-   if (empty($_POST["dateofbirth"])) {
+     if (empty($_POST["dateofbirth"])) {
     $dateofbirthErr = "Date of Birth required";
   } else if ($dateofbirth = date('d-m-Y', strtotime($_REQUEST['dateofbirth'])));
     { $dateofbirth = test_input($_POST["dateofbirth"]); }
 
-}
+  
+           if(file_exists('data.json'))  
+           {  
+                $current_data = file_get_contents('data.json');  
+                $array_data = json_decode($current_data, true);  
+                $extra = array(  
+                     'name'               =>     $_POST['name'], 
+                      'email'               =>     $_POST['email'],
+                      'uname'               =>     $_POST['uname'],
+                      'password'               =>     $_POST['password'],
+                     'gender'          =>     $_POST["gender"],  
+                     'dateofbirth'     =>     $_POST["dateofbirth"]  
+                );  
+                $array_data[] = $extra;  
+                $final_data = json_encode($array_data);  
+                if(file_put_contents('data.json', $final_data))  
+                {  
+                     $message = "File Appended Successfully</p>";  
+                }  
+           }  
+           else  
+           {  
+                $error = 'JSON File not exits';  
+           }  
+      }  
+
+
+
 
 
     function test_input($data) 
@@ -73,7 +101,16 @@
 <fieldset>
 <legend>REGISTRATION</legend>
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form method="post">
+
+  <?php 
+    
+   if (isset($error)) 
+   {
+      echo $error;
+   }
+
+   ?> <br>
 
   Name: <input type="text" name="name" value="<?php echo $name;?>">
   <br><hr>
@@ -102,6 +139,14 @@
 
   <input type="submit" name="submit" value="Submit">  
   <input type="reset" name="reset" value="Reset">
+
+  <?php
+   
+   if (isset($message)) {
+       echo $message;
+   }
+
+    ?>
 
 </form>
 </fieldset>
