@@ -2,7 +2,7 @@
 function db_conn()
 {
     $servername = "localhost";
-    $username = "Farhan";
+    $username = "root";
     $password = "";
     $dbname = "labtask5";
 
